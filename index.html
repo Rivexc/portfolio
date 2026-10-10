@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rex Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Boot Screen -->
+    <div id="boot-screen">
+        <div class="boot-logo">
+            <svg viewBox="0 0 384 512" width="60" height="60" style="fill: #ffffff;">
+                <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/>
+            </svg>
+        </div>
+        <div class="boot-progress-container">
+            <div class="boot-progress-bar" id="boot-progress-bar"></div>
+        </div>
+    </div>
+
+    <!-- Top Menu Bar -->
+    <header class="menu-bar">
+        <div class="menu-left">
+            <div class="menu-item apple-logo" id="appleMenu">
+                <svg viewBox="0 0 384 512" width="14" height="14" style="fill: currentColor; margin-top: 2px;">
+                    <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/>
+                </svg>
+                <div class="dropdown-menu">
+                    <div class="dropdown-item" onclick="openAboutPortfolio()">About This Portfolio</div>
+                    <div class="dropdown-divider"></div>
+                    <div class="dropdown-item">System Settings...</div>
+                    <div class="dropdown-item">App Store...</div>
+                    <div class="dropdown-divider"></div>
+                    <div class="dropdown-item" onclick="location.reload()">Restart...</div>
+                    <div class="dropdown-item" onclick="location.exitTab()">Shut Down...</div>
+                </div>
+            </div>
+            <div class="menu-item bold" id="finderMenu">Finder
+                <div class="dropdown-menu">
+                    <div class="dropdown-item">About Finder</div>
+                    <div class="dropdown-divider"></div>
+                    <div class="dropdown-item">Preferences...</div>
+                    <div class="dropdown-item">Empty Trash...</div>
+                </div>
+            </div>
+            <div class="menu-item">File
+                <div class="dropdown-menu">
+                    <div class="dropdown-item">New Finder Window</div>
+                    <div class="dropdown-item">New Folder</div>
+                    <div class="dropdown-item">New Smart Folder</div>
+                    <div class="dropdown-divider"></div>
+                    <div class="dropdown-item">Close Window</div>
+                </div>
+            </div>
+            <div class="menu-item">Edit
+                <div class="dropdown-menu">
+                    <div class="dropdown-item">Undo</div>
+                    <div class="dropdown-item">Redo</div>
+                    <div class="dropdown-divider"></div>
+                    <div class="dropdown-item">Cut</div>
+                    <div class="dropdown-item">Copy</div>
+                    <div class="dropdown-item">Paste</div>
+                </div>
+            </div>
+            <div class="menu-item">View
+                <div class="dropdown-menu">
+                    <div class="dropdown-item">as Icons</div>
+                    <div class="dropdown-item">as List</div>
+                    <div class="dropdown-item">as Columns</div>
+                </div>
+            </div>
+            <div class="menu-item">Go
+                <div class="dropdown-menu">
+                    <div class="dropdown-item">Back</div>
+                    <div class="dropdown-item">Forward</div>
+                    <div class="dropdown-item">Enclosing Folder</div>
+                </div>
+            </div>
+            <div class="menu-item">Window
+                <div class="dropdown-menu">
+                    <div class="dropdown-item">Minimize</div>
+                    <div class="dropdown-item">Zoom</div>
+                    <div class="dropdown-divider"></div>
+                    <div class="dropdown-item">Bring All to Front</div>
+                </div>
+            </div>
+            <div class="menu-item">Help
+                <div class="dropdown-menu">
+                    <div class="dropdown-item">Send Finder Feedback</div>
+                    <div class="dropdown-item">macOS Help</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MacBook Camera Notch -->
+        <div class="camera-notch"></div>
+
+        <div class="menu-right">
+            <span class="status-icon" style="display: flex; align-items: center; gap: 6px;">
+                100%
+                <svg viewBox="0 0 24 12" width="22" height="11">
+                    <rect x="0.5" y="0.5" width="20" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+                    <path d="M22 4 L22 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+                    <rect x="2" y="2" width="17" height="8" rx="1" fill="currentColor"/>
+                </svg>
+            </span>
+            <span class="status-icon" style="display: flex; align-items: center;">
+                <svg viewBox="0 0 16 16" width="16" height="16" style="stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; fill: none;">
+                    <path d="M5 10.5 C6.5 9 9.5 9 11 10.5" />
+                    <path d="M2.5 8 C5.5 5 10.5 5 13.5 8" />
+                    <path d="M0 5.5 C4.5 1 11.5 1 16 5.5" />
+                    <circle cx="8" cy="13.5" r="1.5" fill="currentColor" stroke="none" />
+                </svg>
+            </span>
+            <span class="status-icon" style="display: flex; align-items: center;">
+                <svg viewBox="0 0 16 16" width="14" height="14">
+                    <circle cx="6.5" cy="6.5" r="5" fill="none" stroke="currentColor" stroke-width="2" />
+                    <path d="M10.5 10.5 L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+            </span>
+            <span class="status-icon" style="display: flex; align-items: center;">
+                <svg viewBox="0 0 16 16" width="16" height="16">
+                    <rect x="1" y="4" width="14" height="2" rx="1" fill="currentColor" />
+                    <circle cx="12" cy="5" r="3" fill="currentColor" />
+                    <rect x="1" y="10" width="14" height="2" rx="1" fill="currentColor" />
+                    <circle cx="4" cy="11" r="3" fill="currentColor" />
+                </svg>
+            </span>
+            <span class="status-icon clock" id="clock">Tue Sep 8 1:48 PM</span>
+        </div>
+    </header>
+
+    <!-- Desktop Workspace -->
+    <main class="desktop" id="desktop">
+
+        <!-- Desktop Icons -->
+        <div class="desktop-icons" id="desktop-icons">
+            <div class="desktop-icon" data-action="resume" aria-label="Resume" tabindex="0">
+                <div class="desktop-icon-img">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 2h12v2H6V2zm13 4.5H5v13c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V6.5h-3zm-1 13H7V8h11v11.5z"/></svg>
+                </div>
+                <span class="desktop-icon-label">Resume.pdf</span>
+            </div>
+            <div class="desktop-icon" data-action="projects" aria-label="Projects" tabindex="0">
+                <div class="desktop-icon-img folder-srv">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg>
+                </div>
+                <span class="desktop-icon-label">Projects</span>
+            </div>
+            <div class="desktop-icon" data-action="contact" aria-label="Contact" tabindex="0">
+                <div class="desktop-icon-img">
+                      <img src="assets/app/download-removebg-preview.png" alt="Contact Image" style="width: 63px; height: 63px;">
+                </div>
+                <span class="desktop-icon-label">Contact Me</span>
+            </div>
+        </div>
+
+        <!-- About This Portfolio Window -->
+        <div class="window" id="window-about" style="top: 130px; left: 200px; width: 540px; height: 480px;">
+            <div class="window-header">
+                <div class="traffic-lights">
+                    <button class="light close" onclick="closeWindow('window-about')"></button>
+                    <button class="light minimize" onclick="minimizeWindow('window-about')"></button>
+                    <button class="light maximize" onclick="maximizeWindow('window-about')"></button>
+                </div>
+                <div class="window-title">About This Portfolio</div>
+            </div>
+            <div class="window-body about-body">
+                <div class="about-hero">
+                    <div class="about-avatar" id="about-avatar"></div>
+                    <div class="about-identity">
+                        <h1 class="about-name">Rivex chaudhary</h1>
+                        <p class="about-title">Full-Stack Web Developer</p>
+                    </div>
+                </div>
+                <div class="about-divider"></div>
+                <div class="about-grid">
+                    <div class="about-section">
+                        <h3>Portfolio Info</h3>
+                        <div class="about-stat"><span class="about-stat-label">Projects:</span><span class="about-stat-value">8</span></div>
+                        <div class="about-stat"><span class="about-stat-label">Technologies:</span><span class="about-stat-value">16+</span></div>
+                        <div class="about-stat"><span class="about-stat-label">Experience:</span><span class="about-stat-value">3+ years</span></div>
+                        <div class="about-stat"><span class="about-stat-label">Location:</span><span class="about-stat-value">NEPAL, ITAHARI</span></div>
+                    </div>
+                    <div class="about-section">
+                        <h3>Skills</h3>
+                        <div class="about-skill">
+                            <span class="about-skill-label">JavaScript</span>
+                            <div class="about-skill-bar"><div class="about-skill-fill" style="width: 95%"></div></div>
+                        </div>
+                        <div class="about-skill">
+                            <span class="about-skill-label">React</span>
+                            <div class="about-skill-bar"><div class="about-skill-fill" style="width: 90%"></div></div>
+                        </div>
+                        <div class="about-skill">
+                            <span class="about-skill-label">CSS/Styling</span>
+                            <div class="about-skill-bar"><div class="about-skill-fill" style="width: 88%"></div></div>
+                        </div>
+                        <div class="about-skill">
+                            <span class="about-skill-label">Node.js</span>
+                            <div class="about-skill-bar"><div class="about-skill-fill" style="width: 82%"></div></div>
+                        </div>
+                        <div class="about-skill">
+                            <span class="about-skill-label">Python</span>
+                            <div class="about-skill-bar"><div class="about-skill-fill" style="width: 80%"></div></div>
+                        </div>
+                        <div class="about-skill">
+                            <span class="about-skill-label">Laravel</span>
+                            <div class="about-skill-bar"><div class="about-skill-fill" style="width: 75%"></div></div>
+                        </div>
+                    </div>
+                    <div class="about-section" style="grid-column: 1 / -1;">
+                        <h3>About</h3>
+                        <p class="about-bio">I build beautiful, functional web experiences with a focus on user-centered design and clean code. This portfolio is a macOS-style web app built entirely with HTML, CSS, and JavaScript — no frameworks.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Finder Window -->
+        <div class="window finder-window" id="window-finder" style="top: 70px; left: 110px; width: 650px; height: 470px;">
+            <div class="window-header">
+                <div class="traffic-lights">
+                    <button class="light close" onclick="closeWindow('window-finder')" aria-label="Close Finder"></button>
+                    <button class="light minimize" onclick="minimizeWindow('window-finder')" aria-label="Minimize Finder"></button>
+                    <button class="light maximize" onclick="maximizeWindow('window-finder')" aria-label="Maximize Finder"></button>
+                </div>
+                <div class="window-title" id="finder-window-title">Finder</div>
+            </div>
+            <div class="finder-body">
+                <aside class="finder-sidebar" aria-label="Finder locations">
+                    <div class="finder-sidebar-heading">Favorites</div>
+                    <button class="finder-location active" data-folder="All Files" onclick="selectFinderFolder('All Files')">All Files</button>
+                    <button class="finder-location" data-folder="Projects" onclick="selectFinderFolder('Projects')">Projects</button>
+                    <button class="finder-location" data-folder="About Me" onclick="selectFinderFolder('About Me')">About Me</button>
+                    <button class="finder-location" data-folder="Contact" onclick="selectFinderFolder('Contact')">Contact</button>
+                    <div class="finder-sidebar-heading finder-sidebar-heading-spaced">Devices</div>
+                    <button class="finder-location" data-folder="Macintosh HD" onclick="selectFinderFolder('Macintosh HD')">Macintosh HD</button>
+                </aside>
+                <section class="finder-content">
+                    <div class="finder-toolbar">
+                        <div class="finder-breadcrumb" id="finder-breadcrumb">All Files</div>
+                        <input class="finder-search" id="finder-search" type="search" placeholder="Search" aria-label="Search Finder files">
+                    </div>
+                    <div class="finder-grid" id="finder-grid"></div>
+                    <div class="finder-status" id="finder-status"></div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Contact Window -->
+        <div class="window contact-window" id="window-contact" style="top: 150px; left: 300px; width: 440px;">
+            <div class="window-header">
+                <div class="traffic-lights">
+                    <button class="light close" onclick="closeWindow('window-contact')" aria-label="Close Contact"></button>
+                    <button class="light minimize" onclick="minimizeWindow('window-contact')" aria-label="Minimize Contact"></button>
+                    <button class="light maximize" onclick="maximizeWindow('window-contact')" aria-label="Maximize Contact"></button>
+                </div>
+                <div class="window-title">Contact Me</div>
+            </div>
+            <div class="window-body contact-body">
+                <h2>Find me online</h2>
+                <p>Choose a platform to connect with me.</p>
+                <div class="social-grid">
+                    <a class="social-card instagram" href="https://www.instagram.com/rivex_chu/?hl=en" target="_blank" rel="noopener noreferrer">
+                        <span class="social-icon" aria-hidden="true"><i class="fa-brands fa-square-instagram"></i></span>
+                        <span><strong>Instagram</strong><small>Follow my work</small></span>
+                    </a>
+                    <a class="social-card whatsapp" href="https://www.whatsapp.com/" target="_blank" rel="noopener noreferrer">
+                        <span class="social-icon" aria-hidden="true"><i class="fa-brands fa-square-whatsapp"></i></span>
+                        <span><strong>WhatsApp</strong><small>Send a message</small></span>
+                    </a>
+                    <a class="social-card github" href="https://github.com/" target="_blank" rel="noopener noreferrer">
+                        <span class="social-icon" aria-hidden="true"><i class="fa-brands fa-square-github"></i></span>
+                        <span><strong>GitHub</strong><small>See my code</small></span>
+                    </a>
+                    <a class="social-card linkedin" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+                        <span class="social-icon" aria-hidden="true"><i class="fa-brands fa-linkedin"></i></span>
+                        <span><strong>LinkedIn</strong><small>Connect professionally</small></span>
+                    </a>
+                    <a class="social-card email" href="mailto:your.rivexc@email.com" target="_blank" rel="noopener noreferrer">
+                        <span class="social-icon" aria-hidden="true"><i class="fa-brands fa-square-envelope"></i></span>
+                        <span><strong>Email</strong><small>Send me an email</small></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wallpapers Window -->
+        <div class="window" id="window-wallpapers">
+            <div class="window-header">
+                <div class="traffic-lights">
+                    <button class="light close" onclick="closeWindow('window-wallpapers')"></button>
+                    <button class="light minimize" onclick="minimizeWindow('window-wallpapers')"></button>
+                    <button class="light maximize" onclick="maximizeWindow('window-wallpapers')"></button>
+                </div>
+                <div class="window-title">Wallpapers</div>
+            </div>
+            <div class="window-body wallpapers-body">
+                <div class="wallpaper-preview-container">
+                    <div class="wallpaper-card active" onclick="changeWallpaper('big-sur')">
+                        <div class="wallpaper-thumb bg-bigsur"></div>
+                        <div class="wallpaper-info">
+                            <h4>Big Sur</h4>
+                            <p>Dynamic Wallpaper</p>
+                        </div>
+                    </div>
+                    <div class="wallpaper-card" onclick="changeWallpaper('monterey')">
+                        <div class="wallpaper-thumb bg-monterey"></div>
+                        <div class="wallpaper-info">
+                            <h4>Monterey</h4>
+                            <p>Abstract Waves</p>
+                        </div>
+                    </div>
+                    <div class="wallpaper-card" onclick="changeWallpaper('ventura')">
+                        <div class="wallpaper-thumb bg-ventura"></div>
+                        <div class="wallpaper-info">
+                            <h4>Ventura</h4>
+                            <p>Vibrant Gradient</p>
+                        </div>
+                    </div>
+                    <div class="wallpaper-card" onclick="changeWallpaper('wp1')">
+                        <div class="wallpaper-thumb bg-wp1"></div>
+                        <div class="wallpaper-info">
+                            <h4>WP 1</h4>
+                            <p>Custom</p>
+                        </div>
+                    </div>
+                    <div class="wallpaper-card" onclick="changeWallpaper('wp2')">
+                        <div class="wallpaper-thumb bg-wp2"></div>
+                        <div class="wallpaper-info">
+                            <h4>WP 2</h4>
+                            <p>Custom</p>
+                        </div>
+                    </div>
+                    <div class="wallpaper-card" onclick="changeWallpaper('wp3')">
+                        <div class="wallpaper-thumb bg-wp3"></div>
+                        <div class="wallpaper-info">
+                            <h4>WP 3</h4>
+                            <p>Custom</p>
+                        </div>
+                    </div>
+                    <div class="wallpaper-card" onclick="changeWallpaper('wp4')">
+                        <div class="wallpaper-thumb bg-wp4"></div>
+                        <div class="wallpaper-info">
+                            <h4>WP 4</h4>
+                            <p>Custom</p>
+                        </div>
+                    </div>
+                    <div class="wallpaper-card" onclick="changeWallpaper('wp5')">
+                        <div class="wallpaper-thumb bg-wp5"></div>
+                        <div class="wallpaper-info">
+                            <h4>WP 5</h4>
+                            <p>Laptop Base</p>
+                        </div>
+                    </div>
+                    <div class="wallpaper-card" onclick="changeWallpaper('wp6')">
+                        <div class="wallpaper-thumb bg-wp6"></div>
+                        <div class="wallpaper-info">
+                            <h4>WP 6</h4>
+                            <p>Maggie Lindemann</p>
+                      
+                        </div>
+                    </div>
+                    <div class="wallpaper-card" onclick="changeWallpaper('wp7')">
+                        <div class="wallpaper-thumb bg-wp7"></div>
+                        <div class="wallpaper-info">
+                            <h4>WP 7</h4>
+                            <p>Custom</p>
+                        </div>
+                    </div>
+                    <div class="wallpaper-card" onclick="changeWallpaper('wp8')">
+                        <div class="wallpaper-thumb bg-wp8"></div>
+                        <div class="wallpaper-info">
+                            <h4>WP 8</h4>
+                            <p>Custom</p>
+                        </div>
+                    </div>
+                    
+                    <div class="wallpaper-card" onclick="changeWallpaper('wp9')">
+                        <div class="wallpaper-thumb bg-wp9"></div>
+                        <div class="wallpaper-info">
+                            <h4>WP 9</h4>
+                            <p>Custom</p>
+                        </div>
+                    </div>
+                    <div class="wallpaper-card" onclick="changeWallpaper('w10')">
+                        <div class="wallpaper-thumb bg-w10"></div>
+                        <div class="wallpaper-info">
+                            <h4>WP 10</h4>
+                            <p>Custom</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="wallpaper-options">
+                    <label>
+                        <input type="checkbox" id="darkModeToggle" checked> Change dark/light mode as wallpapers change
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Calculator Window -->
+        <div class="window dark-window" id="window-calculator">
+            <div class="window-header">
+                <div class="traffic-lights">
+                    <button class="light close" onclick="closeWindow('window-calculator')"></button>
+                    <button class="light minimize" onclick="minimizeWindow('window-calculator')"></button>
+                    <button class="light maximize" onclick="maximizeWindow('window-calculator')"></button>
+                </div>
+                <div class="window-title">Calculator</div>
+            </div>
+            <div class="window-body calculator-body">
+                <div class="calc-display" id="calcDisplay">0</div>
+                <div class="calc-grid">
+                    <button class="calc-btn btn-top" onclick="calcAction('clear')">AC</button>
+                    <button class="calc-btn btn-top" onclick="calcAction('sign')">±</button>
+                    <button class="calc-btn btn-top" onclick="calcAction('percent')">%</button>
+                    <button class="calc-btn btn-op" onclick="calcAction('op', '÷')">÷</button>
+                    
+                    <button class="calc-btn" onclick="calcAction('num', '7')">7</button>
+                    <button class="calc-btn" onclick="calcAction('num', '8')">8</button>
+                    <button class="calc-btn" onclick="calcAction('num', '9')">9</button>
+                    <button class="calc-btn btn-op" onclick="calcAction('op', '×')">×</button>
+                    
+                    <button class="calc-btn" onclick="calcAction('num', '4')">4</button>
+                    <button class="calc-btn" onclick="calcAction('num', '5')">5</button>
+                    <button class="calc-btn" onclick="calcAction('num', '6')">6</button>
+                    <button class="calc-btn btn-op" onclick="calcAction('op', '-')">-</button>
+                    
+                    <button class="calc-btn" onclick="calcAction('num', '1')">1</button>
+                    <button class="calc-btn" onclick="calcAction('num', '2')">2</button>
+                    <button class="calc-btn" onclick="calcAction('num', '3')">3</button>
+                    <button class="calc-btn btn-op" onclick="calcAction('op', '+')">+</button>
+                    
+                    <button class="calc-btn btn-zero" onclick="calcAction('num', '0')">0</button>
+                    <button class="calc-btn" onclick="calcAction('num', '.')">.</button>
+                    <button class="calc-btn btn-op" onclick="calcAction('equals')">=</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nano Banana App Window -->
+        <div class="window" id="window-nanobanana">
+            <div class="window-header">
+                <div class="traffic-lights">
+                    <button class="light close" onclick="closeWindow('window-nanobanana')"></button>
+                    <button class="light minimize" onclick="minimizeWindow('window-nanobanana')"></button>
+                    <button class="light maximize" onclick="maximizeWindow('window-nanobanana')"></button>
+                </div>
+                <div class="window-title">Nano Banana Studio</div>
+            </div>
+            <div class="window-body nanobanana-body">
+                <div class="nb-hero">
+                    <div class="nb-badge">🍌 Nano Banana AI</div>
+                    <h2>Interactive AI Playground</h2>
+                    <p>Generate, transform, and edit vector icons and wallpaper visuals seamlessly using the Nano Banana Engine.</p>
+                </div>
+                <div class="nb-input-group">
+                    <input type="text" id="nbPrompt" placeholder="Describe icon style (e.g. 'Glossy macOS Safari Icon')...">
+                    <button class="nb-btn" onclick="generateBananaIcon()">Generate Icon</button>
+                </div>
+                <div class="nb-preview-area" id="nbPreview">
+                    <div class="nb-placeholder-icon">🍌</div>
+                    <p>Ready to process visual prompt</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Notes Window -->
+        <div class="window notes-window" id="window-notes" style="top: 100px; left: 250px; width: 620px; height: 430px;">
+            <div class="window-header">
+                <div class="traffic-lights">
+                    <button class="light close" onclick="closeWindow('window-notes')" aria-label="Close Notes"></button>
+                    <button class="light minimize" onclick="minimizeWindow('window-notes')" aria-label="Minimize Notes"></button>
+                    <button class="light maximize" onclick="maximizeWindow('window-notes')" aria-label="Maximize Notes"></button>
+                </div>
+                <div class="window-title">Notes</div>
+            </div>
+            <div class="notes-body">
+                <aside class="notes-sidebar">
+                    <div class="notes-sidebar-toolbar">
+                        <strong>Notes</strong>
+                        <button class="notes-new-btn" type="button" onclick="createNote()" aria-label="Create new note">+</button>
+                    </div>
+                    <input class="notes-search" id="notes-search" type="search" placeholder="Search notes" aria-label="Search notes">
+                    <div class="notes-list" id="notes-list"></div>
+                </aside>
+                <section class="notes-editor" aria-label="Note editor">
+                    <input class="note-title-input" id="note-title" type="text" placeholder="Note title" aria-label="Note title">
+                    <textarea class="note-content-input" id="note-content" placeholder="Start writing..." aria-label="Note content"></textarea>
+                    <div class="notes-editor-footer">
+                        <span id="notes-save-status">Saved</span>
+                        <button class="notes-delete-btn" type="button" onclick="deleteSelectedNote()">Delete Note</button>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Calendar Window -->
+        <div class="window" id="window-calendar" style="top: 80px; left: 420px; width: 560px;">
+            <div class="window-header">
+                <div class="traffic-lights">
+                    <button class="light close" onclick="closeWindow('window-calendar')"></button>
+                    <button class="light minimize" onclick="minimizeWindow('window-calendar')"></button>
+                    <button class="light maximize" onclick="maximizeWindow('window-calendar')"></button>
+                </div>
+                <div class="window-title">Calendar</div>
+            </div>
+            <div class="window-body calendar-app-body">
+                <div class="cal-app-sidebar">
+                    <div class="cal-app-year" id="cal-sidebar-year">2026</div>
+                    <div class="cal-app-mini-months" id="cal-mini-months"></div>
+                    <div class="cal-app-events-panel">
+                        <div class="cal-events-header">Events</div>
+                        <div class="cal-events-list" id="cal-events-list">
+                            <p class="cal-no-events">No events. Click a day to add one.</p>
+                        </div>
+                        <div class="cal-add-event" id="cal-add-event-form" style="display:none;">
+                            <input type="text" id="cal-event-input" placeholder="Event title..." class="cal-event-input">
+                            <div class="cal-event-btns">
+                                <button class="cal-event-save-btn" onclick="saveCalEvent()">Save</button>
+                                <button class="cal-event-cancel-btn" onclick="cancelCalEvent()">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cal-app-main">
+                    <div class="cal-app-nav">
+                        <button class="cal-nav-btn" onclick="calNavigate(-1)">&#8249;</button>
+                        <div class="cal-month-year-label" id="cal-month-year-label"></div>
+                        <button class="cal-nav-btn" onclick="calNavigate(1)">&#8250;</button>
+                        <button class="cal-today-btn" onclick="calGoToday()">Today</button>
+                    </div>
+                    <div class="cal-day-names">
+                        <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+                    </div>
+                    <div class="cal-grid-main" id="cal-grid-main"></div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- macOS Dock -->
+    <div class="dock-wrapper">
+        <div class="dock" id="dock">
+            <div class="dock-item" data-title="Finder" onclick="openFinder()" role="button" tabindex="0" aria-label="Open Finder">
+                <img src="assets/finder.svg" class="dock-svg" alt="Finder">
+            </div>
+
+            <div class="dock-item" data-title="Wallpapers" onclick="openWindow('window-wallpapers')">
+                <img src="assets/wallpapers.svg" class="dock-svg" alt="Wallpapers">
+            </div>
+
+            <div class="dock-item" data-title="Calculator" onclick="openWindow('window-calculator')">
+                <img src="assets/calculator.svg" class="dock-svg" alt="Calculator">
+            </div>
+
+            <div class="dock-item" data-title="Calendar" onclick="openWindow('window-calendar')">
+                <img src="assets/calendar.svg" class="dock-svg" alt="Calendar">
+            </div>
+
+            <div class="dock-item" data-title="Notes" onclick="openNotes()" role="button" tabindex="0" aria-label="Open Notes">
+                <img src="assets/app/Apple_Notes_Icon___Logo-removebg-preview.png" class="dock-svg" alt="Notes">
+            </div>
+
+            <div class="dock-item" data-title="VS Code">
+                <img src="assets/vscode.svg" class="dock-svg" alt="VS Code">
+            </div>
+
+            <div class="dock-item" data-title="App Store">
+                <img src="assets/appstore.svg" class="dock-svg" alt="App Store">
+            </div>
+
+            <!-- Nano Banana Interactive Icon -->
+            <div class="dock-item" data-title="Nano Banana" onclick="openWindow('window-nanobanana')">
+                <img src="assets/nanobanana.svg" class="dock-svg" alt="Nano Banana">
+            </div>
+        </div>
+    </div>
+
+    <!-- Spotlight Search Overlay (full screen, after dock) -->
+    <div class="spotlight-full" id="spotlight-full">
+        <div class="spotlight-full-container">
+            <svg class="spotlight-full-icon" viewBox="0 0 24 24"><circle cx="10" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="15" y1="15" x2="20" y2="20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <input type="text" id="spotlight-full-input" class="spotlight-full-input" placeholder="Search…" autocomplete="off">
+        </div>
+        <div class="spotlight-full-results" id="spotlight-full-results"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

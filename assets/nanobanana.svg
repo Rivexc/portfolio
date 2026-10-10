@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+    <defs>
+        <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#FFE133" />
+            <stop offset="100%" stop-color="#FFB300" />
+        </linearGradient>
+        <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="15" stdDeviation="15" flood-color="#8a6d00" flood-opacity="0.2"/>
+        </filter>
+        <filter id="bananaShadow" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#000" flood-opacity="0.3"/>
+        </filter>
+    </defs>
+    <rect width="420" height="420" x="46" y="46" rx="95" fill="url(#bg)" filter="url(#shadow)"/>
+    
+    <!-- Cartoon Banana -->
+    <g filter="url(#bananaShadow)">
+        <!-- Banana Body -->
+        <path d="M 330,150 C 370,230 350,330 250,400 C 150,470 70,410 70,410 C 70,410 140,430 220,370 C 300,310 320,200 330,150 Z" fill="#FFE066" />
+        <path d="M 310,165 C 340,240 330,320 240,380 C 150,440 85,395 85,395 C 85,395 145,410 215,360 C 285,310 300,210 310,165 Z" fill="#FFF2CC" />
+        <!-- Banana Stem -->
+        <path d="M 330,150 C 340,110 370,100 370,100 C 370,100 390,120 360,170 C 360,170 345,155 330,150 Z" fill="#8B5A2B"/>
+        <!-- Banana Tip -->
+        <path d="M 70,410 C 50,440 60,450 60,450 C 60,450 80,440 85,395 C 85,395 75,405 70,410 Z" fill="#6A8A33"/>
+    </g>
+</svg>
